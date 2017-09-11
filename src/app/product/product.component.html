@@ -3,7 +3,8 @@
     <img [src]="imgUrl" alt="商品">
     <div class="caption">
       <h4 class="pull-right">{{product.price}}元</h4>
-      <h4>{{product.title}}</h4>
+      <a [routerLink]="['/product',product.title]"><h4>{{product.title}}</h4></a>
+ 
       <p>{{product.desc}}</p>
     </div>
     <div>
