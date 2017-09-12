@@ -1,4 +1,20 @@
-<div>
+<div class="thumbnail">
   <img src="../../assets/images/p1.JPEG" alt="">
-  <h4>{{productTitle}}</h4>
+  <h4 class="pull-right">{{product.price}}元</h4>
+  <h4>{{product.title}}</h4>
+  <p>{{product.desc}}</p>
+  <div>
+    <app-stars [rating]="product.rating"></app-stars>
+  </div>
+</div>
+<div class="well">
+  <div class="row" *ngFor="let comment of comments">
+    <hr>
+    <div class="col-md-12">
+      <app-stars [rating]="comment.rating"></app-stars>
+      <span>{{comment.author}}</span>
+      <span class="pull-right">{{comment.datatime}}</span>
+      <p>{{comment.desc}}</p>
+    </div>
+  </div>
 </div>
