@@ -2,6 +2,7 @@ import { ProductServiceService } from './shared/product-service/product-service.
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, Component } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { Form, ReactiveFormsModule, FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 
@@ -15,6 +16,9 @@ import { SearchComponent } from './search/search.component';
 import { NarbarComponent } from './narbar/narbar.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { HomeComponent } from './home/home.component';
+import { FilterPipe } from './piep/filter.pipe';
+
+
 
 
 
@@ -34,10 +38,13 @@ const routeConfig: Routes = [
     NarbarComponent,
     ProductDetailComponent,
     HomeComponent,
+    FilterPipe,
   ],
   imports: [
     BrowserModule,
-    RouterModule.forRoot(routeConfig)
+    RouterModule.forRoot(routeConfig),
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [ProductServiceService],
   bootstrap: [AppComponent]
